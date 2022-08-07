@@ -49,7 +49,7 @@ def check_auth(request):
                                           'Content-Type': 'application/x-www-form-urlencoded'},
                                       data={
                                           'client_id': client_id,
-                                      })
+                                      },verify=False)
     return keycloak_response
 
 
@@ -97,7 +97,7 @@ def login():
                                               'client_id': client_id,
                                               'client_secret': client_secret,
                                               'grant_type': 'password'
-                                          })
+                                          },verify=False)
         if keycloak_response.status_code == 400:
             return bad_request_error
         elif keycloak_response.status_code == 401:
@@ -124,7 +124,7 @@ def logout():
                                           data={
                                               'client_id': client_id,
                                               'refresh_token': params.refresh_token,
-                                          })
+                                          },verify=False)
         if keycloak_response.status_code == 400:
             return bad_request_error
         elif keycloak_response.status_code == 401:
