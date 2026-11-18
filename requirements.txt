@@ -76,7 +76,7 @@ service-identity==18.1.0
 simplejson==3.17.6
 six==1.16.0
 systemd-python==234
-Twisted==22.1.0
+Twisted==26.10.0rc1
 tzdata==2022.1
 tzlocal==4.2
 urllib3==1.26.5
